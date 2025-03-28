@@ -26,6 +26,21 @@ end)
 -- Enable break indent
 vim.o.breakindent = true
 
+-- wrap is off by default
+vim.wo.wrap = false
+
+-- a tab is two spaces
+vim.opt.tabstop = 2
+
+-- an autoindent (with <<) is two spaces
+vim.opt.shiftwidth = 2
+
+-- use spaces, not tabs
+vim.opt.expandtab = true
+
+-- backspace through everything in insert mode
+vim.opt.backspace = 'indent,eol,start'
+
 -- Save undo history
 vim.o.undofile = true
 
@@ -70,5 +85,8 @@ vim.o.scrolloff = 10
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
 vim.o.confirm = true
+
+vim.g.lazyvim_ruby_lsp = "ruby_lsp"
+vim.g.lazyvim_ruby_formatter = "rubocop"
 
 -- vim: ts=2 sts=2 sw=2 et

@@ -5,6 +5,9 @@
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- set text wrapping toggle
+vim.keymap.set('n', '<leader>tw', ':set wrap!<CR>', { silent = true })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -50,5 +53,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.hl.on_yank()
   end,
 })
+
+if vim.g.neovide or vim.g.gui_vimr then
+  require 'custom.gui'
+end
 
 -- vim: ts=2 sts=2 sw=2 et
