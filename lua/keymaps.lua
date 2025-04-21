@@ -8,8 +8,14 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- set text wrapping toggle
 vim.keymap.set('n', '<leader>tw', ':set wrap!<CR>', { silent = true })
 
+-- run rspec via command_pipe
+vim.keymap.set('n', '<leader>tk', ':w|:silent !echo "bundle exec rspec %" > command_pipe<CR>', { silent = true })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
+-- Copy current buffer path relative to root of VIM session to system clipboard
+vim.keymap.set('n', '<leader>yp', ':let @*=expand("%")<CR>:echo "Copied file path to clipboard"<CR>')
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -53,9 +59,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.hl.on_yank()
   end,
 })
-
-if vim.g.neovide or vim.g.gui_vimr then
-  require 'custom.gui'
-end
-
 -- vim: ts=2 sts=2 sw=2 et

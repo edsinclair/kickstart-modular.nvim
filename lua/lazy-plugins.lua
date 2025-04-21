@@ -60,12 +60,16 @@ require('lazy').setup({
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   require 'custom.plugins.vim-devicons',
+  require 'custom.plugins.copilot-chat',
   require 'custom.plugins.solarized',
   require 'custom.plugins.vim-ripgrep',
   require 'custom.plugins.vim-rails',
+  require 'custom.plugins.live-preview',
   require 'custom.plugins.nvim-notify',
   require 'custom.plugins.neotest',
   require 'custom.plugins.nvim-treesitter-endwise',
+  require 'custom.plugins.nvim-treesitter-textobjects',
+  require 'custom.plugins.undotree',
   require 'kickstart.plugins.neo-tree',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
