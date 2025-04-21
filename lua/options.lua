@@ -81,6 +81,9 @@ vim.opt.scrolloff = 10
 -- See `:help 'confirm'`
 vim.opt.confirm = true
 
+vim.opt.undodir = os.getenv("HOME") .. "/.local/share/nvim/undodir"
+vim.opt.undofile = true
+
 vim.g.lazyvim_ruby_lsp = "ruby_lsp"
 vim.g.lazyvim_ruby_formatter = "rubocop"
 
