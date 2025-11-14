@@ -5,9 +5,8 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local lint = require 'lint'
-      lint.linters_by_ft = {
-        markdown = { 'markdownlint' },
-      }
+      lint.linters_by_ft['markdown'] = { 'markdownlint' }
+      lint.linters_by_ft['javascript'] = { 'standardjs' }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
       -- instead set linters_by_ft like this:
@@ -37,7 +36,7 @@ return {
       -- lint.linters_by_ft['json'] = nil
       -- lint.linters_by_ft['markdown'] = nil
       -- lint.linters_by_ft['rst'] = nil
-      lint.linters_by_ft['ruby'] = { "ruby" }
+      lint.linters_by_ft['ruby'] = { 'ruby' }
       -- lint.linters_by_ft['terraform'] = nil
       -- lint.linters_by_ft['text'] = nil
 

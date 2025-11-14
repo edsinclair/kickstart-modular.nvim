@@ -1,6 +1,6 @@
 return {
   {
-    'brianhuster/nvim-treesitter-endwise',
+    'brianhuster/treesitter-endwise.nvim',
     config = function()
       vim.api.nvim_create_autocmd('FileType', {
         pattern = { 'ruby', 'lua', 'vim', 'bash', 'elixir', 'fish', 'julia' },
