@@ -1,3 +1,3 @@
 return {
-  { 'jremmen/vim-ripgrep' },
+  { 'slim-template/vim-slim' },
 }
