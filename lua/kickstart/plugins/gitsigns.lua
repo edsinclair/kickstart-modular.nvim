@@ -14,6 +14,15 @@
 --
 -- See `:help gitsigns` to understand what the configuration keys do
 return {
+  {
+    'tpope/vim-fugitive',
+    config = function()
+      -- Optional configuration can go here
+      vim.api.nvim_set_keymap('n', '<leader>hc', ':G commit<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>hb', ':G blame<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>hf', ':setlocal foldmethod=syntax<CR>', { noremap = true, silent = true })
+    end,
+  },
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
@@ -65,7 +74,7 @@ return {
         map('n', '<leader>hu', gitsigns.stage_hunk, { desc = 'git [u]ndo stage hunk' })
         map('n', '<leader>hR', gitsigns.reset_buffer, { desc = 'git [R]eset buffer' })
         map('n', '<leader>hp', gitsigns.preview_hunk, { desc = 'git [p]review hunk' })
-        map('n', '<leader>hb', gitsigns.blame_line, { desc = 'git [b]lame line' })
+        map('n', '<leader>hB', gitsigns.blame_line, { desc = 'git [B]lame line' })
         map('n', '<leader>hd', gitsigns.diffthis, { desc = 'git [d]iff against index' })
         map('n', '<leader>hD', function()
           gitsigns.diffthis '@'
