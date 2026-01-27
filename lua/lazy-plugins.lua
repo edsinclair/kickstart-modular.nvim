@@ -61,6 +61,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.lint',
   require 'custom.plugins.vim-devicons',
   require 'custom.plugins.copilot-chat',
+  require 'custom.plugins.code-companion',
   require 'custom.plugins.solarized',
   require 'custom.plugins.vim-ripgrep',
   require 'custom.plugins.vim-rails',
